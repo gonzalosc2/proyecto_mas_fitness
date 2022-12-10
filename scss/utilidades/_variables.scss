@@ -10,6 +10,8 @@ $color-boton-volver: #ec0000;
 // colores secundarios
 $color-texto-sec: #FFE400;
 $color-boton-volver-sec: $color-fondo;
+$color-borde-caja-rojo: #fa5d5ddd;
+
 
 // colores sombras
 $color-sombra-h1: #fbfb00d2;
@@ -18,8 +20,14 @@ $color-sombra-h3: #ffa600;
 $color-sombra-texto-footer: #ff02029c;
 
 // tamaños
-$logo-nombre-mobile: 60px;
-$h1-size: 1.7rem;
+$size-logo: 60px;
+$header-size: 3rem;
+$h1-size: 1.5rem;
+$h2-size: $h1-size*.9;
+$font-size: 1rem;
+$size-increase-tablet: 1.1;
+$size-increase-desktop: 1.25;
+
 
 
 // espacios

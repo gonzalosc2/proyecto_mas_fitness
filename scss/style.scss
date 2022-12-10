@@ -54,7 +54,8 @@ nav {
     .container-fluid {
         .navbar-brand {
             img {
-                height: $logo-nombre-mobile;
+                height: $size-logo;
+                filter: drop-shadow(0 0 20px #4d4d4d);
             }
         }
     }
@@ -66,7 +67,7 @@ nav {
 
 header {
     text-align: center;
-    font-size: 3rem;
+    font-size: $header-size;
     // margin-bottom: -2rem;
 
     .texto_header {
@@ -104,13 +105,6 @@ main {
             border-radius: 25px;
             box-shadow: 2px 2px 6px whitesmoke, -2px -2px 6px whitesmoke, 6px 6px 10px #d9ff00, -6px -6px 10px #d9ff00;
 
-
-            // Estilo carrusel home
-            #carouselFade {
-                min-width: auto;
-                max-width: 500px
-            }
-
             .titulo_texto {
                 @include text_style(0, 10px, 4px, 4px, $color-sombra-h2, bold, $color-h1, $h1-size);
                 text-align: center;
@@ -118,13 +112,33 @@ main {
 
             .texto {
                 margin-bottom: 0;
-                font-size: 1.1rem;
+                font-size: $font-size;
                 text-shadow: 2px 2px 2px rgba(74, 73, 73, 0.776);
 
                 p {
                     margin-bottom: 0;
                 }
             }
+        }
+
+        // Estilo carrusel home
+        .container_carousel {
+            // min-width: auto;
+            width: 100%;
+            height: 100%;
+            max-width: 500px;
+
+            .carousel-inner {
+                border-radius: 25px;
+                box-shadow: 4px 4px 6px #5d5d5dde, -4px -4px 6px #5d5d5dde, 8px 8px 10px #3a3a3ab9, -8px -8px 10px #3a3a3ab9;
+
+                .carousel-item {
+                    img {
+                        border-radius: 25px;
+                    }
+                }
+            }
+
         }
 
         .container_logo {
@@ -136,6 +150,14 @@ main {
                     width: 80vw;
                 }
             }
+        }
+
+        .container_color {
+            display: none;
+        }
+
+        .container_img {
+            display: none;
         }
     }
 
@@ -168,33 +190,13 @@ main {
             }
         }
 
-        .container_logo {
-            align-items: center;
-            justify-self: center;
-
-            a {
-                img {
-                    width: 80vw;
-                }
-            }
-        }
-
-
     }
-
-
-
 
     // Formato Títulos
     h2 {
-        @include text_style(4px, 4px, 3px, 3px, #8a2a2a57, bolder, $color-h2, $h1-size*.9);
+        @include text_style(4px, 4px, 3px, 3px, #8a2a2a57, bolder, $color-h2, $h2-size);
         text-align: center;
         // @include animacion(texto-gira, 5s, .5s);
-    }
-
-    h3 {
-        @include text_style(4px, 4px, 2px, 2px, $color-sombra-h2, bolder, $color-h3, larger);
-        // @include animacion(texto-desliza, 4.5s, .5s);
     }
 
     // Formato Textos
@@ -205,15 +207,44 @@ main {
         display: flex;
         gap: .8rem;
         margin-bottom: 1.5rem;
+        max-width: 95%;
+        justify-content: center;
 
+        // min-height: 180px;
         img {
-            max-height: 180px;
+            max-width: 50%;
         }
 
         .img_mobi_no_show {
             display: none;
         }
+
+        .img_mobi_no_show2 {
+            display: none;
+        }
     }
+
+    .img_mid_text_online {
+        display: flex;
+        gap: .8rem;
+        margin-bottom: 1.5rem;
+        max-width: 95%;
+        justify-content: center;
+
+        // min-height: 180px;
+        img {
+            max-width: 100%;
+        }
+
+        .img_mobi_no_show {
+            display: none;
+        }
+
+        .img_mobi_no_show2 {
+            display: none;
+        }
+    }
+
 
     // Formato formulario
     form {
@@ -221,7 +252,7 @@ main {
         border-radius: 25px;
         box-shadow: 2px 2px 10px #e5e507, -2px -2px 10px #e5e507;
         padding: 1rem;
-        text-shadow: 2px 2px 2px rgba(74, 73, 73, 0.776);
+        text-shadow: 2px 2px 2px #4a4949c6;
 
         div {
             margin: 10px;
@@ -257,118 +288,273 @@ footer {
 }
 
 
+/* ****************************************************** */
+/* ****************************************************** */
+/* ****************************************************** */
+/* VERSION TABLET */
+@media screen and (min-width:640px) {
 
-/* ****************************************************** */
-/* ****************************************************** */
-/* ****************************************************** */
-/* VERSION DESKTOP */
-@media screen and (min-width:1024px) {
+    /* ****************************************************** */
+    /* MENU DE NAVEGACION */
+
+    nav {
+        .container-fluid {
+            #navbarSupportedContent {
+                ul {
+                    li {
+                        font-size: $font-size*$size-increase-tablet;
+                    }
+                }
+            }
+        }
+    }
 
     /* ****************************************************** */
     /* ****************************************************** */
     /* 1. ESTILOS DE HEADER */
 
+    header {
+        .texto_header {
+            font-size: $header-size*$size-increase-tablet;
+        }
+    }
 
     /* ****************************************************** */
     /* ****************************************************** */
     /* 2. ESTILOS DE MAIN */
 
     main {
-        word-wrap: break-word;
+        // word-wrap: break-word;
 
         .index_container_main {
+
             display: grid;
-            grid-template-columns: 1fr 2fr;
-            grid-template-rows: 2.5fr .5fr;
-            margin: 5px;
-            padding: 10px 20px 10px 20px;
+            grid-template-columns: repeat(1fr, 2);
+            grid-template-rows: repeat(1fr, 7);
+            padding: 5px;
+            gap: 2.5rem;
 
             grid-template-areas:
-                "carousel container_texto"
-                "container_texto_mision container_texto_mision";
+                "cont_que       img_1    "
+                "img_2          cont_qns "
+                "cont_o1        img_3    "
+                "img_4          cont_o2  "
+                "cont_o3        img_5    "
+                "img_6          img_6    "
+                "cont_mis       cont_mis ";
 
             // Estilo carrusel home
-            #carouselFade {
-                margin-right: 2rem;
-                margin-bottom: 1.5rem;
-                width: 500px;
-                box-shadow: 2px 2xp 6px #fef72ae0;
-                grid-area: carousel;
-            }
+            .container {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                min-height: 340px;
+                width: 100%;
 
-            //  Formato Textos 
-            .container_texto {
-                grid-area: container_texto;
-
-                h1 {
-                    text-align: left;
-                }
-            }
-
-            .container_texto_mision {
-                grid-area: container_texto_mision;
-                font-size: 1.5rem;
-                text-align: center;
-
-                h1 {
-                    text-align: left;
+                .titulo_texto {
+                    font-size: $h1-size*$size-increase-tablet;
                 }
 
-                .texto_emph {
-                    font-size: 1.5rem;
+                .texto {
                     text-align: center;
-                    @include animacion(texto-latido, 3s, .5);
-                    animation-direction: alternate-reverse;
+                    font-size: $font-size*$size-increase-tablet;
+                }
+
+                &:nth-child(1) {
+                    grid-area: cont_que;
+                }
+
+                &:nth-child(3) {
+                    grid-area: cont_qns;
+                }
+
+                &:nth-child(5) {
+                    grid-area: cont_o1;
+                }
+
+                &:nth-child(6) {
+                    grid-area: cont_o3;
+                }
+
+                &:nth-child(7) {
+                    grid-area: cont_o2;
+                }
+
+                &:nth-child(8) {
+                    grid-area: cont_mis;
+
+                    .titulo_texto {
+                        font-size: $h1-size*1.4;
+                    }
+
+                    .texto {
+                        font-size: $font-size*1.4;
+                    }
+
                 }
             }
 
-            // Formato Botón Regreso
-            .volver {
+            .container_carousel {
                 display: none;
+            }
+
+            .container_logo {
+                display: none;
+            }
+
+            .container_img {
+                display: inline-block;
+                // padding: 1.5rem;
+                align-items: center;
+                justify-self: center;
+                min-height: 300px;
+                height: 100%;
+                width: 100%;
+                border-radius: 25px;
+                // box-shadow: 2px 2px 6px #ffc2c2, -2px -2px 6px #ffc2c2, 6px 6px 10px #f9ab5df6, -6px -6px 10px #f9ab5df6;
+                box-shadow: 2px 2px 6px #4c4c4cde, -2px -2px 6px #4c4c4cde, 6px 6px 10px #292929b9, -6px -6px 10px #292929b9;
+
+                img {
+                    border-radius: 25px;
+                    object-fit: cover;
+                    height: 100%;
+                    width: 100%;
+                    filter: grayscale(100%);
+                }
+
+                &:nth-child(9) {
+                    grid-area: img_1;
+                }
+
+                &:nth-child(10) {
+                    grid-area: img_2;
+                }
+
+                &:nth-child(11) {
+                    grid-area: img_3;
+                }
+
+                &:nth-child(12) {
+                    grid-area: img_4;
+                }
+
+                &:nth-child(13) {
+                    grid-area: img_5;
+                }
+
+                &:nth-child(14) {
+                    grid-area: img_6;
+                    max-height: 400px;
+                }
+
+                &:nth-child(15) {
+                    display: none;
+                }
+
+                &:nth-child(16) {
+                    display: none;
+                }
+
+                &:nth-child(17) {
+                    display: none;
+                }
+
+                &:nth-child(18) {
+                    display: none;
+                }
+            }
+        }
+
+        .test_container_main {
+            display: grid;
+            grid-template-columns: repeat(1fr, 2);
+            grid-template-rows: repeat(1fr, 2);
+            padding: 5px;
+            gap: 2.5rem;
+
+            grid-template-areas:
+                "t1       t2    "
+                "t3       t4    ";
+
+            // Estilo carrusel home
+            .container {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+
+                .titulo_texto {
+                    font-size: $h1-size*$size-increase-tablet;
+                }
+
+                .texto {
+                    text-align: center;
+                    font-size: $font-size*$size-increase-tablet;
+                }
+
+                &:nth-child(1) {
+                    grid-area: t1;
+
+                }
+
+                &:nth-child(2) {
+                    display: t2;
+                    box-shadow: 2px 2px 6px #ffd1d1, -2px -2px 6px #ffd1d1, 6px 6px 10px #ffbc40, -6px -6px 10px #ffbc40;
+                }
+
+                &:nth-child(3) {
+                    grid-area: t3;
+                    box-shadow: 2px 2px 6px #ffbc40, -2px -2px 6px #ffbc40, 6px 6px 10px #ff0000, -6px -6px 10px #ff0000;
+                }
+
+                &:nth-child(4) {
+                    grid-area: t4;
+                    box-shadow: 2px 2px 6px #d2ffa2, -2px -2px 6px #ffb3a2, 6px 6px 10px #fae902, -6px -6px 10px #fae902;
+                }
+
             }
         }
 
         // Formato títulos
         h2 {
             @include flex-align;
-        }
-
-        h3 {
-            @include flex-align;
+            font-size: $h2-size*$size-increase-tablet;
         }
 
         .texto {
-            @include flex-align;
+            font-size: $font-size*$size-increase-tablet;
         }
 
         // Formato bloque de imágenes en medio de texto
         .img_mid_text {
             img {
-                height: 300px;
+                max-width: 30%;
             }
 
             .img_mobi_no_show {
                 display: inline;
+                max-width: 30%;
             }
         }
 
-        .texto {
-            p {
-                text-align: left;
+        .img_mid_text_online {
+            img {
+                max-width: 50%;
+            }
+
+            .img_mobi_no_show {
+                display: inline;
+                max-width: 50%;
             }
         }
+
     }
 
-    .volver {
-
-        &:hover {
-            padding: 4px 8px;
-            font-size: 14px;
-            background-color: black;
-            border: 2px solid #ec0000;
-        }
+    // Formato formulario
+    form {
+        font-size: $font-size*$size-increase-tablet;
     }
-
 
     /* ****************************************************** */
     /* ****************************************************** */
@@ -381,6 +567,181 @@ footer {
 
         .no_show {
             display: inline;
+        }
+    }
+
+}
+
+
+/* VERSION DESKTOP */
+@media screen and (min-width:1024px) {
+
+    /* ****************************************************** */
+    /* MENU DE NAVEGACION */
+
+    nav {
+        .container-fluid {
+            #navbarSupportedContent {
+                ul {
+                    li {
+                        font-size: $font-size*$size-increase-desktop;
+                    }
+                }
+            }
+        }
+    }
+
+    /* ****************************************************** */
+    /* ****************************************************** */
+    /* 1. ESTILOS DE HEADER */
+
+    header {
+        .texto_header {
+            font-size: $header-size*$size-increase-desktop;
+        }
+    }
+
+    /* ****************************************************** */
+    /* ****************************************************** */
+    /* 2. ESTILOS DE MAIN */
+
+    main {
+
+        .index_container_main {
+            grid-template-columns: repeat(1fr, 3);
+            grid-template-rows: repeat(1fr, 7);
+
+            grid-template-areas:
+                "img_1       logo       logo     "
+                "cont_qns    logo       logo     "
+                "img_2       cont_que   img_3    "
+                "cont_o1     img_4      cont_o3  "
+                "img_5       cont_o2    img_6    "
+                "img_7       img_8      img_8    "
+                "cont_mis    cont_mis   cont_mis ";
+
+            // Estilo carrusel home
+            .container {
+
+                .titulo_texto {
+                    font-size: $h1-size*$size-increase-desktop;
+                }
+
+                .texto {
+                    font-size: $font-size*$size-increase-desktop;
+                }
+
+                &:nth-child(8) {
+                    grid-area: cont_mis;
+
+                    .titulo_texto {
+                        font-size: $h1-size*1.6;
+                    }
+
+                    .texto {
+                        font-size: $font-size*1.7;
+                    }
+
+                }
+            }
+
+            .container_logo {
+                display: inline;
+                grid-area: logo;
+
+                a {
+                    img {
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+            }
+
+            .container_img {
+
+                &:nth-child(15) {
+                    grid-area: img_7;
+                    display: inline;
+                }
+
+                &:nth-child(16) {
+                    grid-area: img_8;
+                    display: inline;
+                }
+
+            }
+
+        }
+
+        .test_container_main {
+
+            // Estilo carrusel home
+            .container {
+                .titulo_texto {
+                    font-size: $h1-size*$size-increase-desktop;
+                }
+
+                .texto {
+                    font-size: $font-size*$size-increase-desktop;
+                }
+            }
+        }
+
+        // Formato títulos
+        h2 {
+            @include flex-align;
+            font-size: $h2-size*$size-increase-desktop;
+        }
+
+        .texto {
+            font-size: $font-size*$size-increase-desktop;
+        }
+
+        // Formato bloque de imágenes en medio de texto
+        .img_mid_text {
+            img {
+                max-width: 25%;
+            }
+
+            .img_mobi_no_show {
+                max-width: 25%;
+            }
+
+            .img_mobi_no_show2 {
+                display: inline;
+                max-width: 25%;
+            }
+        }
+
+        .img_mid_text_online {
+            img {
+                max-width: 33%;
+            }
+
+            .img_mobi_no_show {
+                max-width: 33%;
+            }
+
+            .img_mobi_no_show2 {
+                display: inline;
+                max-width: 33%;
+            }
+        }
+
+    }
+
+    // Formato formulario
+    form {
+        font-size: $font-size*$size-increase-desktop;
+    }
+
+    .volver {
+
+        &:hover {
+            padding: 4px 8px;
+            font-size: 14px;
+            background-color: black;
+            border: 2px solid #ec0000;
         }
     }
 
