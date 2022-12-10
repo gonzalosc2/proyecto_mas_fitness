@@ -1,0 +1,82 @@
+ /* ANIMACIONES */
+ /* estilos de section */
+
+ /* ****************************************************** */
+ /* VERSION MOBILE */
+
+ @keyframes texto-gira {
+     0% {
+         transform: rotate(0deg);
+     }
+
+     25% {
+         transform: rotate(1.5deg) skew(15deg);
+     }
+
+     50% {
+         transform: rotate(0deg);
+     }
+
+     75% {
+         transform: rotate(-1.5deg) skew(-15deg);
+     }
+
+     100% {
+         transform: rotate(0deg);
+     }
+ }
+
+ @keyframes texto-desliza {
+     0% {
+         transform: translateX(0);
+
+     }
+
+     25% {
+         transform: translateX(50%);
+     }
+
+     50% {
+         transform: translateX(0);
+     }
+
+     75% {
+         transform: translateX(-50%);
+     }
+
+     100% {
+         transform: translateX(0);
+     }
+ }
+
+
+ /* ****************************************************** */
+ /* VERSION DESKTOP */
+ @media screen and (min-width:1024px) {
+
+     @keyframes texto-latido {
+         from {
+             transform: scale(.9);
+         }
+
+         to {
+             transform: scale(1);
+         }
+     }
+
+     @keyframes texto-desliza {
+         0% {
+             transform: translateX(0);
+         }
+
+
+         50% {
+             transform: translateX(20rem);
+         }
+
+         100% {
+             transform: translateX(0);
+         }
+     }
+
+ }

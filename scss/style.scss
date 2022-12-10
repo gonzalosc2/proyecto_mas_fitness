@@ -1,0 +1,394 @@
+// SASS PROYECTO FINAL
+// Autor: Gonzalo Salazar
+
+// SCSS
+// Archivos secundarios de SASS - Utilidades
+@import "utilidades/variables";
+@import "utilidades/mixin";
+@import "utilidades/extend";
+
+/* ****************************************************** */
+/* ****************************************************** */
+/* -1. PRE-CARGA DE ELEMENTOS */
+@font-face {
+    font-family: dead-stock-font;
+    src: url(../font/dead_stock_font.ttf);
+}
+
+;
+
+
+/* ****************************************************** */
+/* ****************************************************** */
+/* 0. RESET + BODY */
+
+// RESET
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+// BODY
+body {
+    background-color: $color-fondo;
+    color: $color-texto;
+    font-family: 'DM Sans', sans-serif;
+    align-self: center;
+}
+
+/* ****************************************************** */
+/* ****************************************************** */
+/* ****************************************************** */
+/* VERSION MOBILE */
+
+/* ****************************************************** */
+/* MENU DE NAVEGACION */
+
+nav {
+    margin: 1rem 1rem 2rem 1rem;
+    box-shadow: 4px 4px 10px 5px $color-sombra-h2, -4px -4px 10px 5px $color-sombra-h1;
+    border-radius: .8rem;
+    background-color: #171717;
+
+    .container-fluid {
+        .navbar-brand {
+            img {
+                height: $logo-nombre-mobile;
+            }
+        }
+    }
+}
+
+/* ****************************************************** */
+/* ****************************************************** */
+/* 1. ESTILOS DE HEADER */
+
+header {
+    text-align: center;
+    font-size: 3rem;
+    // margin-bottom: -2rem;
+
+    .texto_header {
+        font-family: dead-stock-font;
+        color: $color-h1;
+
+        &:first-child {
+            text-shadow: 2px 2px 3px $color-sombra-h2;
+        }
+
+        &:last-child {
+            transform: rotateX(180deg) translateX(15%) translateY(35px) skewX(-40deg);
+            opacity: .4;
+            width: 80%;
+        }
+    }
+}
+
+/* ****************************************************** */
+/* ****************************************************** */
+/* 2. ESTILOS DE MAIN */
+
+main {
+
+    @extend %estilos-flex;
+
+    .index_container_main {
+        @extend %estilos-flex;
+
+        .container {
+            padding: 1.5rem;
+            align-items: center;
+            justify-self: center;
+            border: .7px solid darkgreen;
+            border-radius: 25px;
+            box-shadow: 2px 2px 6px whitesmoke, -2px -2px 6px whitesmoke, 6px 6px 10px #d9ff00, -6px -6px 10px #d9ff00;
+
+
+            // Estilo carrusel home
+            #carouselFade {
+                min-width: auto;
+                max-width: 500px
+            }
+
+            .titulo_texto {
+                @include text_style(0, 10px, 4px, 4px, $color-sombra-h2, bold, $color-h1, $h1-size);
+                text-align: center;
+            }
+
+            .texto {
+                margin-bottom: 0;
+                font-size: 1.1rem;
+                text-shadow: 2px 2px 2px rgba(74, 73, 73, 0.776);
+
+                p {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .container_logo {
+            align-items: center;
+            justify-self: center;
+
+            a {
+                img {
+                    width: 80vw;
+                }
+            }
+        }
+    }
+
+
+    // a esto hay que hacerle un extend
+    .test_container_main {
+        @extend %estilos-flex;
+
+        .container {
+            padding: 1.5rem;
+            align-items: center;
+            justify-self: center;
+            border: .7px solid darkgreen;
+            border-radius: 25px;
+            box-shadow: 2px 2px 6px whitesmoke, -2px -2px 6px whitesmoke, 6px 6px 10px #d9ff00, -6px -6px 10px #d9ff00;
+
+            .titulo_texto {
+                @include text_style(0, 10px, 4px, 4px, $color-sombra-h2, bold, $color-h1, $h1-size);
+                text-align: center;
+            }
+
+            .texto {
+                margin-bottom: 0;
+                font-size: 1.1rem;
+                text-shadow: 2px 2px 2px rgba(74, 73, 73, 0.776);
+
+                p {
+                    margin-bottom: 1.2rem;
+                }
+            }
+        }
+
+        .container_logo {
+            align-items: center;
+            justify-self: center;
+
+            a {
+                img {
+                    width: 80vw;
+                }
+            }
+        }
+
+
+    }
+
+
+
+
+    // Formato Títulos
+    h2 {
+        @include text_style(4px, 4px, 3px, 3px, #8a2a2a57, bolder, $color-h2, $h1-size*.9);
+        text-align: center;
+        // @include animacion(texto-gira, 5s, .5s);
+    }
+
+    h3 {
+        @include text_style(4px, 4px, 2px, 2px, $color-sombra-h2, bolder, $color-h3, larger);
+        // @include animacion(texto-desliza, 4.5s, .5s);
+    }
+
+    // Formato Textos
+    @extend %estilos-texto;
+
+    //  Formato bloque de imágenes en medio de texto 
+    .img_mid_text {
+        display: flex;
+        gap: .8rem;
+        margin-bottom: 1.5rem;
+
+        img {
+            max-height: 180px;
+        }
+
+        .img_mobi_no_show {
+            display: none;
+        }
+    }
+
+    // Formato formulario
+    form {
+        border: 2px solid #fef72ae0;
+        border-radius: 25px;
+        box-shadow: 2px 2px 10px #e5e507, -2px -2px 10px #e5e507;
+        padding: 1rem;
+        text-shadow: 2px 2px 2px rgba(74, 73, 73, 0.776);
+
+        div {
+            margin: 10px;
+            padding: 2px;
+        }
+    }
+}
+
+/* ****************************************************** */
+/* Formato Botón Regreso */
+.volver {
+    @include boton-volver;
+
+    a {
+        &:link {
+            color: white;
+            text-decoration-line: none;
+        }
+
+        &:visited {
+            color: white;
+            text-decoration-line: none;
+        }
+    }
+}
+
+/* ****************************************************** */
+/* ****************************************************** */
+/* 3. ESTILOS DE FOOTER */
+
+footer {
+    @include estilo-footer;
+}
+
+
+
+/* ****************************************************** */
+/* ****************************************************** */
+/* ****************************************************** */
+/* VERSION DESKTOP */
+@media screen and (min-width:1024px) {
+
+    /* ****************************************************** */
+    /* ****************************************************** */
+    /* 1. ESTILOS DE HEADER */
+
+
+    /* ****************************************************** */
+    /* ****************************************************** */
+    /* 2. ESTILOS DE MAIN */
+
+    main {
+        word-wrap: break-word;
+
+        .index_container_main {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            grid-template-rows: 2.5fr .5fr;
+            margin: 5px;
+            padding: 10px 20px 10px 20px;
+
+            grid-template-areas:
+                "carousel container_texto"
+                "container_texto_mision container_texto_mision";
+
+            // Estilo carrusel home
+            #carouselFade {
+                margin-right: 2rem;
+                margin-bottom: 1.5rem;
+                width: 500px;
+                box-shadow: 2px 2xp 6px #fef72ae0;
+                grid-area: carousel;
+            }
+
+            //  Formato Textos 
+            .container_texto {
+                grid-area: container_texto;
+
+                h1 {
+                    text-align: left;
+                }
+            }
+
+            .container_texto_mision {
+                grid-area: container_texto_mision;
+                font-size: 1.5rem;
+                text-align: center;
+
+                h1 {
+                    text-align: left;
+                }
+
+                .texto_emph {
+                    font-size: 1.5rem;
+                    text-align: center;
+                    @include animacion(texto-latido, 3s, .5);
+                    animation-direction: alternate-reverse;
+                }
+            }
+
+            // Formato Botón Regreso
+            .volver {
+                display: none;
+            }
+        }
+
+        // Formato títulos
+        h2 {
+            @include flex-align;
+        }
+
+        h3 {
+            @include flex-align;
+        }
+
+        .texto {
+            @include flex-align;
+        }
+
+        // Formato bloque de imágenes en medio de texto
+        .img_mid_text {
+            img {
+                height: 300px;
+            }
+
+            .img_mobi_no_show {
+                display: inline;
+            }
+        }
+
+        .texto {
+            p {
+                text-align: left;
+            }
+        }
+    }
+
+    .volver {
+
+        &:hover {
+            padding: 4px 8px;
+            font-size: 14px;
+            background-color: black;
+            border: 2px solid #ec0000;
+        }
+    }
+
+
+    /* ****************************************************** */
+    /* ****************************************************** */
+    /* 3. ESTILOS DE FOOTER */
+
+    footer {
+        justify-content: space-between;
+        font-size: 1.1rem;
+        font-weight: bolder;
+
+        .no_show {
+            display: inline;
+        }
+    }
+
+}
+
+/* ****************************************************** */
+/* ****************************************************** */
+/* ****************************************************** */
+/* ****************************************************** */
+/* 4. SCSS - ANIMACIONES */
+@import "otros/animaciones";

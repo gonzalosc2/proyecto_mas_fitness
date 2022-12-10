@@ -1,0 +1,27 @@
+// extend
+
+// Formato texto
+%estilos-texto {
+    .texto {
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+        text-shadow: 2px 2px 2px rgba(74, 73, 73, 0.776);
+
+        p {
+            margin-bottom: 1.2rem;
+        }
+    }
+}
+
+// Estilo Flex
+%estilos-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: $gap-mobile;
+    margin: 5px;
+    padding: 10px 20px 10px 20px;
+    word-wrap: break-word;
+    text-align: justify;
+}

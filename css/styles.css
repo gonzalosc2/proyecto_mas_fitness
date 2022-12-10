@@ -1,0 +1,325 @@
+@charset "UTF-8";
+main .texto {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  text-shadow: 2px 2px 2px rgba(74, 73, 73, 0.776); }
+  main .texto p {
+    margin-bottom: 1.2rem; }
+
+main, main .index_container_main, main .test_container_main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 5px;
+  padding: 10px 20px 10px 20px;
+  word-wrap: break-word;
+  text-align: justify; }
+
+/* ****************************************************** */
+/* ****************************************************** */
+/* -1. PRE-CARGA DE ELEMENTOS */
+@font-face {
+  font-family: dead-stock-font;
+  src: url(../font/dead_stock_font.ttf); }
+
+/* ****************************************************** */
+/* ****************************************************** */
+/* 0. RESET + BODY */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0; }
+
+body {
+  background-color: #1a1A1D;
+  color: whitesmoke;
+  font-family: 'DM Sans', sans-serif;
+  align-self: center; }
+
+/* ****************************************************** */
+/* ****************************************************** */
+/* ****************************************************** */
+/* VERSION MOBILE */
+/* ****************************************************** */
+/* MENU DE NAVEGACION */
+nav {
+  margin: 1rem 1rem 2rem 1rem;
+  box-shadow: 4px 4px 10px 5px #fd4f4f, -4px -4px 10px 5px #fbfb00d2;
+  border-radius: .8rem;
+  background-color: #171717; }
+  nav .container-fluid .navbar-brand img {
+    height: 60px; }
+
+/* ****************************************************** */
+/* ****************************************************** */
+/* 1. ESTILOS DE HEADER */
+header {
+  text-align: center;
+  font-size: 3rem; }
+  header .texto_header {
+    font-family: dead-stock-font;
+    color: #f4d32d; }
+    header .texto_header:first-child {
+      text-shadow: 2px 2px 3px #fd4f4f; }
+    header .texto_header:last-child {
+      transform: rotateX(180deg) translateX(15%) translateY(35px) skewX(-40deg);
+      opacity: .4;
+      width: 80%; }
+
+/* ****************************************************** */
+/* ****************************************************** */
+/* 2. ESTILOS DE MAIN */
+main .index_container_main .container {
+  padding: 1.5rem;
+  align-items: center;
+  justify-self: center;
+  border: .7px solid darkgreen;
+  border-radius: 25px;
+  box-shadow: 2px 2px 6px whitesmoke, -2px -2px 6px whitesmoke, 6px 6px 10px #d9ff00, -6px -6px 10px #d9ff00; }
+  main .index_container_main .container #carouselFade {
+    min-width: auto;
+    max-width: 500px; }
+  main .index_container_main .container .titulo_texto {
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-shadow: 4px 4px 4px #fd4f4f, -1px -1px 3px rgba(0, 0, 0, 0.376471);
+    font-weight: bold;
+    color: #f4d32d;
+    font-size: 1.7rem;
+    text-align: center; }
+  main .index_container_main .container .texto {
+    margin-bottom: 0;
+    font-size: 1.1rem;
+    text-shadow: 2px 2px 2px rgba(74, 73, 73, 0.776); }
+    main .index_container_main .container .texto p {
+      margin-bottom: 0; }
+
+main .index_container_main .container_logo {
+  align-items: center;
+  justify-self: center; }
+  main .index_container_main .container_logo a img {
+    width: 80vw; }
+
+main .test_container_main .container {
+  padding: 1.5rem;
+  align-items: center;
+  justify-self: center;
+  border: .7px solid darkgreen;
+  border-radius: 25px;
+  box-shadow: 2px 2px 6px whitesmoke, -2px -2px 6px whitesmoke, 6px 6px 10px #d9ff00, -6px -6px 10px #d9ff00; }
+  main .test_container_main .container .titulo_texto {
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-shadow: 4px 4px 4px #fd4f4f, -1px -1px 3px rgba(0, 0, 0, 0.376471);
+    font-weight: bold;
+    color: #f4d32d;
+    font-size: 1.7rem;
+    text-align: center; }
+  main .test_container_main .container .texto {
+    margin-bottom: 0;
+    font-size: 1.1rem;
+    text-shadow: 2px 2px 2px rgba(74, 73, 73, 0.776); }
+    main .test_container_main .container .texto p {
+      margin-bottom: 1.2rem; }
+
+main .test_container_main .container_logo {
+  align-items: center;
+  justify-self: center; }
+  main .test_container_main .container_logo a img {
+    width: 80vw; }
+
+main h2 {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  text-shadow: 4px 3px 3px #8a2a2a57, -1px -1px 3px rgba(0, 0, 0, 0.376471);
+  font-weight: bolder;
+  color: #ff0000;
+  font-size: 1.53rem;
+  text-align: center; }
+
+main h3 {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  text-shadow: 4px 2px 2px #fd4f4f, -1px -1px 3px rgba(0, 0, 0, 0.376471);
+  font-weight: bolder;
+  color: #f2a515;
+  font-size: larger; }
+
+main .img_mid_text {
+  display: flex;
+  gap: .8rem;
+  margin-bottom: 1.5rem; }
+  main .img_mid_text img {
+    max-height: 180px; }
+  main .img_mid_text .img_mobi_no_show {
+    display: none; }
+
+main form {
+  border: 2px solid #fef72ae0;
+  border-radius: 25px;
+  box-shadow: 2px 2px 10px #e5e507, -2px -2px 10px #e5e507;
+  padding: 1rem;
+  text-shadow: 2px 2px 2px rgba(74, 73, 73, 0.776); }
+  main form div {
+    margin: 10px;
+    padding: 2px; }
+
+/* ****************************************************** */
+/* Formato Botón Regreso */
+.volver {
+  margin-top: 1rem;
+  background-color: #ec0000;
+  border: none;
+  color: #1a1A1D;
+  text-align: center;
+  padding: 8px 16px;
+  font-weight: bold;
+  display: inline-block;
+  border-radius: 12px;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+  .volver a:link {
+    color: white;
+    text-decoration-line: none; }
+  .volver a:visited {
+    color: white;
+    text-decoration-line: none; }
+
+/* ****************************************************** */
+/* ****************************************************** */
+/* 3. ESTILOS DE FOOTER */
+footer {
+  position: static;
+  bottom: 1px;
+  margin-top: 1rem;
+  padding: .5rem;
+  text-align: center;
+  font-size: .8rem;
+  font-weight: bold;
+  text-shadow: 4px 4px 3px #ff02029c;
+  color: #e90000; }
+
+/* ****************************************************** */
+/* ****************************************************** */
+/* ****************************************************** */
+/* VERSION DESKTOP */
+@media screen and (min-width: 1024px) {
+  /* ****************************************************** */
+  /* ****************************************************** */
+  /* 1. ESTILOS DE HEADER */
+  /* ****************************************************** */
+  /* ****************************************************** */
+  /* 2. ESTILOS DE MAIN */
+  main {
+    word-wrap: break-word; }
+    main .index_container_main {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      grid-template-rows: 2.5fr .5fr;
+      margin: 5px;
+      padding: 10px 20px 10px 20px;
+      grid-template-areas: "carousel container_texto" "container_texto_mision container_texto_mision"; }
+      main .index_container_main #carouselFade {
+        margin-right: 2rem;
+        margin-bottom: 1.5rem;
+        width: 500px;
+        box-shadow: 2px 2xp 6px #fef72ae0;
+        grid-area: carousel; }
+      main .index_container_main .container_texto {
+        grid-area: container_texto; }
+        main .index_container_main .container_texto h1 {
+          text-align: left; }
+      main .index_container_main .container_texto_mision {
+        grid-area: container_texto_mision;
+        font-size: 1.5rem;
+        text-align: center; }
+        main .index_container_main .container_texto_mision h1 {
+          text-align: left; }
+        main .index_container_main .container_texto_mision .texto_emph {
+          font-size: 1.5rem;
+          text-align: center;
+          animation-name: texto-latido;
+          animation-iteration-count: infinite;
+          animation-duration: 3s;
+          animation-delay: 0.5;
+          animation-direction: alternate-reverse; }
+      main .index_container_main .volver {
+        display: none; }
+    main h2 {
+      align-self: flex-start; }
+    main h3 {
+      align-self: flex-start; }
+    main .texto {
+      align-self: flex-start; }
+    main .img_mid_text img {
+      height: 300px; }
+    main .img_mid_text .img_mobi_no_show {
+      display: inline; }
+    main .texto p {
+      text-align: left; }
+  .volver:hover {
+    padding: 4px 8px;
+    font-size: 14px;
+    background-color: black;
+    border: 2px solid #ec0000; }
+  /* ****************************************************** */
+  /* ****************************************************** */
+  /* 3. ESTILOS DE FOOTER */
+  footer {
+    justify-content: space-between;
+    font-size: 1.1rem;
+    font-weight: bolder; }
+    footer .no_show {
+      display: inline; } }
+
+/* ****************************************************** */
+/* ****************************************************** */
+/* ****************************************************** */
+/* ****************************************************** */
+/* 4. SCSS - ANIMACIONES */
+/* ANIMACIONES */
+/* estilos de section */
+/* ****************************************************** */
+/* VERSION MOBILE */
+@keyframes texto-gira {
+  0% {
+    transform: rotate(0deg); }
+  25% {
+    transform: rotate(1.5deg) skew(15deg); }
+  50% {
+    transform: rotate(0deg); }
+  75% {
+    transform: rotate(-1.5deg) skew(-15deg); }
+  100% {
+    transform: rotate(0deg); } }
+
+@keyframes texto-desliza {
+  0% {
+    transform: translateX(0); }
+  25% {
+    transform: translateX(50%); }
+  50% {
+    transform: translateX(0); }
+  75% {
+    transform: translateX(-50%); }
+  100% {
+    transform: translateX(0); } }
+
+/* ****************************************************** */
+/* VERSION DESKTOP */
+@media screen and (min-width: 1024px) {
+  @keyframes texto-latido {
+    from {
+      transform: scale(0.9); }
+    to {
+      transform: scale(1); } }
+  @keyframes texto-desliza {
+    0% {
+      transform: translateX(0); }
+    50% {
+      transform: translateX(20rem); }
+    100% {
+      transform: translateX(0); } } }

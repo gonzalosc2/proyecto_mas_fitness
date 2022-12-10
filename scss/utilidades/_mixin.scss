@@ -1,0 +1,49 @@
+// mixin h1 - h3
+@mixin text_style($mtop, $mbotom, $tsized, $tsizer, $tshadow, $fweight, $tcolor, $fsize) {
+    margin-top: $mtop;
+    margin-bottom: $mbotom;
+    text-shadow: 4px $tsized $tsizer $tshadow, -1px -1px 3px grayscale($color: #00000060);
+    font-weight: $fweight;
+    color: $tcolor;
+    font-size: $fsize;
+}
+
+@mixin flex-align {
+    align-self: flex-start;
+}
+
+@mixin boton-volver {
+    margin-top: 1rem;
+    background-color: $color-boton-volver;
+    border: none;
+    color: $color-boton-volver-sec;
+    text-align: center;
+    padding: 8px 16px;
+    font-weight: bold;
+    display: inline-block;
+    border-radius: 12px;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+// Footer
+@mixin estilo-footer {
+    position: static;
+    bottom: 1px;
+    margin-top: 1rem;
+    padding: .5rem;
+    text-align: center;
+    font-size: .8rem;
+    font-weight: bold;
+    text-shadow: 4px 4px 3px $color-sombra-texto-footer;
+    color: $color-texto-footer;
+}
+
+// Animaciones
+@mixin animacion($name, $dur, $delay) {
+    animation-name: $name;
+    animation-iteration-count: infinite;
+    animation-duration: $dur;
+    animation-delay: $delay;
+}
