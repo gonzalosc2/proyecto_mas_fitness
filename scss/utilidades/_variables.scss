@@ -2,33 +2,44 @@
 $color-fondo: #1a1A1D;
 $color-texto: whitesmoke;
 $color-texto-footer: #e90000;
-$color-h1: #f4d32d;
-$color-h2: #ff0000;
-$color-h3: #f2a515;
+$color-t1: #f4d32d;
+$color-t2: #ff0000;
 $color-boton-volver: #ec0000;
 
 // colores secundarios
+$color-fondo-header: #171717;
 $color-texto-sec: #FFE400;
-$color-boton-volver-sec: $color-fondo;
-$color-borde-caja-rojo: #fa5d5ddd;
+$color-texto-volver-sec: white;
 
+// coleres bordes
+$color-borde-box: yellowgreen;
 
-// colores sombras
-$color-sombra-h1: #fbfb00d2;
-$color-sombra-h2: #fd4f4f;
-$color-sombra-h3: #ffa600;
+// colores sombras 
+$color-sombra-texto: #4a4949c6;
+$color-sombra-box-nav1: #ffea01;
+$color-sombra-box-nav2: #de2b2b;
+$color-sombra-box: #e0dd2494;
+$color-sombra-box-img: #7264649a;
+$color-sombra-box-tes1: #e4302088;
+$color-sombra-box-tes2: #ffbc40;
+$color-sombra-box-tes3: #d2ffa2;
+$color-sombra-t1: #fbfb00d2;
+$color-sombra-t2: #fd4f4f;
+$color-sombra-t2-2: #8a2a2a57;
 $color-sombra-texto-footer: #ff02029c;
+$color-sombra-boton-volver: #00000033;
 
 // tamaños
 $size-logo: 60px;
-$header-size: 3rem;
-$h1-size: 1.5rem;
-$h2-size: $h1-size*.9;
-$font-size: 1rem;
+$size-header: 3rem;
+$size-t1: 1.5rem;
+$size-t2: $size-t1*.9;
+$size-font: 1rem;
 $size-increase-tablet: 1.1;
 $size-increase-desktop: 1.25;
-
-
-
-// espacios
+$border-radius: 25px;
+$height: 100%;
+$width: 100%;
+$grid-padd: .3rem;
+$grid-gap: 2.5rem;
 $gap-mobile: 2rem;

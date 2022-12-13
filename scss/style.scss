@@ -46,16 +46,13 @@ body {
 /* MENU DE NAVEGACION */
 
 nav {
-    margin: 1rem 1rem 2rem 1rem;
-    box-shadow: 4px 4px 10px 5px $color-sombra-h2, -4px -4px 10px 5px $color-sombra-h1;
-    border-radius: .8rem;
-    background-color: #171717;
+    @include nav-style;
 
     .container-fluid {
         .navbar-brand {
             img {
                 height: $size-logo;
-                filter: drop-shadow(0 0 20px #4d4d4d);
+                filter: drop-shadow(0.5px .5px 20px #4d4d4d);
             }
         }
     }
@@ -67,21 +64,19 @@ nav {
 
 header {
     text-align: center;
-    font-size: $header-size;
+    font-size: $size-header;
     // margin-bottom: -2rem;
 
     .texto_header {
         font-family: dead-stock-font;
-        color: $color-h1;
+        color: $color-t1;
 
         &:first-child {
-            text-shadow: 2px 2px 3px $color-sombra-h2;
+            text-shadow: 2px 2px 3px $color-sombra-t2;
         }
 
         &:last-child {
-            transform: rotateX(180deg) translateX(15%) translateY(35px) skewX(-40deg);
-            opacity: .4;
-            width: 80%;
+            @include reflejo-texto;
         }
     }
 }
@@ -98,22 +93,16 @@ main {
         @extend %estilos-flex;
 
         .container {
-            padding: 1.5rem;
-            align-items: center;
-            justify-self: center;
-            border: .7px solid darkgreen;
-            border-radius: 25px;
-            box-shadow: 2px 2px 6px whitesmoke, -2px -2px 6px whitesmoke, 6px 6px 10px #d9ff00, -6px -6px 10px #d9ff00;
+            @extend %estilos-self-container;
 
             .titulo_texto {
-                @include text_style(0, 10px, 4px, 4px, $color-sombra-h2, bold, $color-h1, $h1-size);
-                text-align: center;
+                @extend %estilos-titulo-texto
             }
 
             .texto {
                 margin-bottom: 0;
-                font-size: $font-size;
-                text-shadow: 2px 2px 2px rgba(74, 73, 73, 0.776);
+                font-size: $size-font;
+                text-shadow: 2px 2px 2px $color-sombra-texto;
 
                 p {
                     margin-bottom: 0;
@@ -123,18 +112,17 @@ main {
 
         // Estilo carrusel home
         .container_carousel {
-            // min-width: auto;
-            width: 100%;
-            height: 100%;
+            height: $height;
+            width: $width;
             max-width: 500px;
 
             .carousel-inner {
-                border-radius: 25px;
-                box-shadow: 4px 4px 6px #5d5d5dde, -4px -4px 6px #5d5d5dde, 8px 8px 10px #3a3a3ab9, -8px -8px 10px #3a3a3ab9;
+                border-radius: $border-radius;
+                @include neon-shadow($color-sombra-box-img, $color-sombra-box-img);
 
                 .carousel-item {
                     img {
-                        border-radius: 25px;
+                        border-radius: $border-radius;
                     }
                 }
             }
@@ -153,50 +141,34 @@ main {
         }
 
         .container_color {
-            display: none;
+            @extend %estilos-ocultos;
         }
 
         .container_img {
-            display: none;
+            @extend %estilos-ocultos;
         }
     }
 
 
-    // a esto hay que hacerle un extend
     .test_container_main {
         @extend %estilos-flex;
 
         .container {
-            padding: 1.5rem;
-            align-items: center;
-            justify-self: center;
-            border: .7px solid darkgreen;
-            border-radius: 25px;
-            box-shadow: 2px 2px 6px whitesmoke, -2px -2px 6px whitesmoke, 6px 6px 10px #d9ff00, -6px -6px 10px #d9ff00;
+            @extend %estilos-self-container;
 
             .titulo_texto {
-                @include text_style(0, 10px, 4px, 4px, $color-sombra-h2, bold, $color-h1, $h1-size);
-                text-align: center;
+                @extend %estilos-titulo-texto;
             }
 
-            .texto {
-                margin-bottom: 0;
-                font-size: 1.1rem;
-                text-shadow: 2px 2px 2px rgba(74, 73, 73, 0.776);
-
-                p {
-                    margin-bottom: 1.2rem;
-                }
-            }
+            @extend %estilos-texto;
         }
 
     }
 
     // Formato Títulos
-    h2 {
-        @include text_style(4px, 4px, 3px, 3px, #8a2a2a57, bolder, $color-h2, $h2-size);
+    h1 {
+        @include text_style(4px, 4px, 3px, 3px, $color-sombra-t2-2, bolder, $color-t2, $size-t2);
         text-align: center;
-        // @include animacion(texto-gira, 5s, .5s);
     }
 
     // Formato Textos
@@ -204,60 +176,43 @@ main {
 
     //  Formato bloque de imágenes en medio de texto 
     .img_mid_text {
-        display: flex;
-        gap: .8rem;
-        margin-bottom: 1.5rem;
-        max-width: 95%;
-        justify-content: center;
+        @extend %estilos-flex-img-text;
 
-        // min-height: 180px;
         img {
             max-width: 50%;
+            @include neon-shadow($color-sombra-box-img, $color-sombra-box-img);
+
         }
 
         .img_mobi_no_show {
-            display: none;
+            @extend %estilos-ocultos;
         }
 
         .img_mobi_no_show2 {
-            display: none;
+            @extend %estilos-ocultos;
         }
     }
 
     .img_mid_text_online {
-        display: flex;
-        gap: .8rem;
-        margin-bottom: 1.5rem;
-        max-width: 95%;
-        justify-content: center;
+        @extend %estilos-flex-img-text;
 
-        // min-height: 180px;
         img {
             max-width: 100%;
         }
 
         .img_mobi_no_show {
-            display: none;
+            @extend %estilos-ocultos;
         }
 
         .img_mobi_no_show2 {
-            display: none;
+            @extend %estilos-ocultos;
         }
     }
 
 
     // Formato formulario
     form {
-        border: 2px solid #fef72ae0;
-        border-radius: 25px;
-        box-shadow: 2px 2px 10px #e5e507, -2px -2px 10px #e5e507;
-        padding: 1rem;
-        text-shadow: 2px 2px 2px #4a4949c6;
-
-        div {
-            margin: 10px;
-            padding: 2px;
-        }
+        @include formulario;
     }
 }
 
@@ -268,13 +223,11 @@ main {
 
     a {
         &:link {
-            color: white;
-            text-decoration-line: none;
+            @extend %estilos-volver;
         }
 
         &:visited {
-            color: white;
-            text-decoration-line: none;
+            @extend %estilos-volver;
         }
     }
 }
@@ -302,7 +255,7 @@ footer {
             #navbarSupportedContent {
                 ul {
                     li {
-                        font-size: $font-size*$size-increase-tablet;
+                        font-size: $size-font*$size-increase-tablet;
                     }
                 }
             }
@@ -315,7 +268,7 @@ footer {
 
     header {
         .texto_header {
-            font-size: $header-size*$size-increase-tablet;
+            font-size: $size-header*$size-increase-tablet;
         }
     }
 
@@ -328,11 +281,7 @@ footer {
 
         .index_container_main {
 
-            display: grid;
-            grid-template-columns: repeat(1fr, 2);
-            grid-template-rows: repeat(1fr, 7);
-            padding: 5px;
-            gap: 2.5rem;
+            @include grid(2, 7);
 
             grid-template-areas:
                 "cont_que       img_1    "
@@ -345,19 +294,17 @@ footer {
 
             // Estilo carrusel home
             .container {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
+                @include flex;
                 min-height: 340px;
-                width: 100%;
+                width: $width;
 
                 .titulo_texto {
-                    font-size: $h1-size*$size-increase-tablet;
+                    font-size: $size-t1*$size-increase-tablet;
                 }
 
                 .texto {
                     text-align: center;
-                    font-size: $font-size*$size-increase-tablet;
+                    font-size: $size-font*$size-increase-tablet;
                 }
 
                 &:nth-child(1) {
@@ -384,11 +331,11 @@ footer {
                     grid-area: cont_mis;
 
                     .titulo_texto {
-                        font-size: $h1-size*1.4;
+                        font-size: $size-t1*1.4;
                     }
 
                     .texto {
-                        font-size: $font-size*1.4;
+                        font-size: $size-font*1.4;
                     }
 
                 }
@@ -404,22 +351,16 @@ footer {
 
             .container_img {
                 display: inline-block;
-                // padding: 1.5rem;
                 align-items: center;
                 justify-self: center;
                 min-height: 300px;
-                height: 100%;
-                width: 100%;
-                border-radius: 25px;
-                // box-shadow: 2px 2px 6px #ffc2c2, -2px -2px 6px #ffc2c2, 6px 6px 10px #f9ab5df6, -6px -6px 10px #f9ab5df6;
-                box-shadow: 2px 2px 6px #4c4c4cde, -2px -2px 6px #4c4c4cde, 6px 6px 10px #292929b9, -6px -6px 10px #292929b9;
+                height: $height;
+                width: $width;
+                border-radius: $border-radius;
+                @include neon-shadow($color-sombra-box-img, $color-sombra-box-img);
 
                 img {
-                    border-radius: 25px;
-                    object-fit: cover;
-                    height: 100%;
-                    width: 100%;
-                    filter: grayscale(100%);
+                    @include img_container_grid;
                 }
 
                 &:nth-child(9) {
@@ -466,11 +407,7 @@ footer {
         }
 
         .test_container_main {
-            display: grid;
-            grid-template-columns: repeat(1fr, 2);
-            grid-template-rows: repeat(1fr, 2);
-            padding: 5px;
-            gap: 2.5rem;
+            @include grid(2, 2);
 
             grid-template-areas:
                 "t1       t2    "
@@ -485,12 +422,12 @@ footer {
                 height: 100%;
 
                 .titulo_texto {
-                    font-size: $h1-size*$size-increase-tablet;
+                    font-size: $size-t1*$size-increase-tablet;
                 }
 
                 .texto {
                     text-align: center;
-                    font-size: $font-size*$size-increase-tablet;
+                    font-size: $size-font*$size-increase-tablet;
                 }
 
                 &:nth-child(1) {
@@ -500,30 +437,30 @@ footer {
 
                 &:nth-child(2) {
                     display: t2;
-                    box-shadow: 2px 2px 6px #ffd1d1, -2px -2px 6px #ffd1d1, 6px 6px 10px #ffbc40, -6px -6px 10px #ffbc40;
+                    @include neon-shadow($color-sombra-box-tes1, $color-sombra-box-tes1);
                 }
 
                 &:nth-child(3) {
                     grid-area: t3;
-                    box-shadow: 2px 2px 6px #ffbc40, -2px -2px 6px #ffbc40, 6px 6px 10px #ff0000, -6px -6px 10px #ff0000;
+                    @include neon-shadow($color-sombra-box-tes2, $color-sombra-box-tes2);
                 }
 
                 &:nth-child(4) {
                     grid-area: t4;
-                    box-shadow: 2px 2px 6px #d2ffa2, -2px -2px 6px #ffb3a2, 6px 6px 10px #fae902, -6px -6px 10px #fae902;
+                    @include neon-shadow($color-sombra-box-tes3, $color-sombra-box-tes3);
                 }
 
             }
         }
 
         // Formato títulos
-        h2 {
+        h1 {
             @include flex-align;
-            font-size: $h2-size*$size-increase-tablet;
+            font-size: $size-t2*$size-increase-tablet;
         }
 
         .texto {
-            font-size: $font-size*$size-increase-tablet;
+            font-size: $size-font*$size-increase-tablet;
         }
 
         // Formato bloque de imágenes en medio de texto
@@ -553,7 +490,7 @@ footer {
 
     // Formato formulario
     form {
-        font-size: $font-size*$size-increase-tablet;
+        font-size: $size-font*$size-increase-tablet;
     }
 
     /* ****************************************************** */
@@ -584,7 +521,7 @@ footer {
             #navbarSupportedContent {
                 ul {
                     li {
-                        font-size: $font-size*$size-increase-desktop;
+                        font-size: $size-font*$size-increase-desktop;
                     }
                 }
             }
@@ -597,7 +534,7 @@ footer {
 
     header {
         .texto_header {
-            font-size: $header-size*$size-increase-desktop;
+            font-size: $size-header*$size-increase-desktop;
         }
     }
 
@@ -608,8 +545,7 @@ footer {
     main {
 
         .index_container_main {
-            grid-template-columns: repeat(1fr, 3);
-            grid-template-rows: repeat(1fr, 7);
+            @include grid(3, 7);
 
             grid-template-areas:
                 "img_1       logo       logo     "
@@ -624,22 +560,22 @@ footer {
             .container {
 
                 .titulo_texto {
-                    font-size: $h1-size*$size-increase-desktop;
+                    font-size: $size-t1*$size-increase-desktop;
                 }
 
                 .texto {
-                    font-size: $font-size*$size-increase-desktop;
+                    font-size: $size-font*$size-increase-desktop;
                 }
 
                 &:nth-child(8) {
                     grid-area: cont_mis;
 
                     .titulo_texto {
-                        font-size: $h1-size*1.6;
+                        font-size: $size-t1*1.6;
                     }
 
                     .texto {
-                        font-size: $font-size*1.7;
+                        font-size: $size-font*1.7;
                     }
 
                 }
@@ -651,8 +587,8 @@ footer {
 
                 a {
                     img {
-                        height: 100%;
-                        width: 100%;
+                        height: $height;
+                        width: $width;
                     }
                 }
             }
@@ -678,23 +614,23 @@ footer {
             // Estilo carrusel home
             .container {
                 .titulo_texto {
-                    font-size: $h1-size*$size-increase-desktop;
+                    font-size: $size-t1*$size-increase-desktop;
                 }
 
                 .texto {
-                    font-size: $font-size*$size-increase-desktop;
+                    font-size: $size-font*$size-increase-desktop;
                 }
             }
         }
 
         // Formato títulos
-        h2 {
+        h1 {
             @include flex-align;
-            font-size: $h2-size*$size-increase-desktop;
+            font-size: $size-t2*$size-increase-desktop;
         }
 
         .texto {
-            font-size: $font-size*$size-increase-desktop;
+            font-size: $size-font*$size-increase-desktop;
         }
 
         // Formato bloque de imágenes en medio de texto
@@ -732,16 +668,13 @@ footer {
 
     // Formato formulario
     form {
-        font-size: $font-size*$size-increase-desktop;
+        font-size: $size-font*$size-increase-desktop;
     }
 
     .volver {
 
         &:hover {
-            padding: 4px 8px;
-            font-size: 14px;
-            background-color: black;
-            border: 2px solid #ec0000;
+            @include boton-volver-hover;
         }
     }
 

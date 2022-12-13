@@ -4,8 +4,8 @@
 %estilos-texto {
     .texto {
         margin-bottom: 0.1rem;
-        font-size: $font-size;
-        text-shadow: 2px 2px 2px rgba(74, 73, 73, 0.776);
+        font-size: $size-font;
+        text-shadow: 2px 2px 2px $color-sombra-texto;
 
         p {
             margin-bottom: 1.2rem;
@@ -13,7 +13,7 @@
     }
 }
 
-// Estilo Flex
+// Flex boxing
 %estilos-flex {
     display: flex;
     flex-direction: column;
@@ -24,4 +24,38 @@
     padding: 10px 20px 10px 20px;
     word-wrap: break-word;
     text-align: justify;
+}
+
+%estilos-self-container {
+    padding: 1.5rem;
+    align-items: center;
+    justify-self: center;
+    border: .7px solid $color-borde-box;
+    border-radius: $border-radius;
+    @include neon-shadow($color-sombra-box, $color-sombra-box);
+}
+
+%estilos-flex-img-text {
+    display: flex;
+    gap: .8rem;
+    margin-bottom: 1.5rem;
+    max-width: 95%;
+    justify-content: center;
+}
+
+// Estilos ocultos
+%estilos-ocultos {
+    display: none;
+}
+
+// Estilos titulo del texto
+%estilos-titulo-texto {
+    @include text_style(0, 10px, 4px, 4px, $color-sombra-t2, bold, $color-t1, $size-t1);
+    text-align: center;
+}
+
+// Botón volver
+%estilos-volver {
+    color: $color-texto-volver-sec;
+    text-decoration-line: none;
 }

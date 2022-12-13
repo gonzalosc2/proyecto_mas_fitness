@@ -1,4 +1,13 @@
-// mixin h1 - h3
+// Menú navegación
+
+@mixin nav-style {
+    margin: 1rem 1rem 2rem 1rem;
+    box-shadow: 4px 4px 10px 5px $color-sombra-t2, -4px -4px 10px 5px $color-sombra-t1;
+    border-radius: $border-radius*.7;
+    background-color: $color-fondo-header;
+}
+
+// mixin t1 - t2
 @mixin text_style($mtop, $mbotom, $tsized, $tsizer, $tshadow, $fweight, $tcolor, $fsize) {
     margin-top: $mtop;
     margin-bottom: $mbotom;
@@ -12,11 +21,12 @@
     align-self: flex-start;
 }
 
+// Botón volver
 @mixin boton-volver {
     margin-top: 1rem;
     background-color: $color-boton-volver;
     border: none;
-    color: $color-boton-volver-sec;
+    color: $color-fondo;
     text-align: center;
     padding: 8px 16px;
     font-weight: bold;
@@ -24,8 +34,28 @@
     border-radius: 12px;
     font-size: 16px;
     transition-duration: 0.4s;
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 8px 16px 0 $color-sombra-boton-volver, 0 6px 20px 0 $color-sombra-boton-volver;
 }
+
+@mixin boton-volver-hover {
+    padding: 4px 8px;
+    font-size: $size-font*.85;
+    background-color: $color-fondo;
+    border: 2px solid $color-boton-volver;
+}
+
+// Sombras
+@mixin neon-shadow($first-color, $second-color) {
+    box-shadow: 1px 2px $first-color,
+        2px 2px 4px $first-color,
+        4px 4px 8px $first-color,
+        8px 8px 16px $first-color,
+        -1px -1px 2px $second-color,
+        -2px -2px 4px $second-color,
+        -4px -4px 8px $second-color,
+        -8px -8px 16px $second-color;
+}
+
 
 // Footer
 @mixin estilo-footer {
@@ -46,4 +76,46 @@
     animation-iteration-count: infinite;
     animation-duration: $dur;
     animation-delay: $delay;
+}
+
+@mixin grid($ncol, $nrow) {
+    display: grid;
+    grid-template-columns: repeat(1fr, $ncol);
+    grid-template-rows: repeat(1fr, $nrow);
+    padding: $grid-padd;
+    gap: $grid-gap;
+}
+
+@mixin flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@mixin reflejo-texto {
+    transform: rotateX(180deg) translateX(15%) translateY(35px) skewX(-40deg);
+    opacity: .4;
+    width: 80%;
+}
+
+@mixin formulario {
+    border: 2px solid $color-borde-box;
+    border-radius: $border-radius;
+    @include neon-shadow($color-sombra-box, $color-sombra-box);
+    padding: 1rem;
+    text-shadow: 2px 2px 2px $color-sombra-texto;
+
+    div {
+        margin: 10px;
+        padding: 2px;
+    }
+}
+
+// Formato imágenes en contenedores con Grid
+@mixin img_container_grid {
+    border-radius: $border-radius;
+    object-fit: cover;
+    height: $height;
+    width: $width;
+    filter: grayscale(100%);
 }
