@@ -7,7 +7,7 @@
     background-color: $color-fondo-header;
 }
 
-// mixin t1 - t2
+// mixin textos
 @mixin text_style($mtop, $mbotom, $tsized, $tsizer, $tshadow, $fweight, $tcolor, $fsize) {
     margin-top: $mtop;
     margin-bottom: $mbotom;
@@ -19,6 +19,10 @@
 
 @mixin flex-align {
     align-self: flex-start;
+}
+
+@mixin sombra-texto($right, $down, $blurr, $color) {
+    text-shadow: $right $down $blurr $color;
 }
 
 // Botón volver
@@ -64,7 +68,7 @@
     margin-top: 1rem;
     padding: .5rem;
     text-align: center;
-    font-size: .8rem;
+    font-size: $size-font-footer;
     font-weight: bold;
     text-shadow: 4px 4px 3px $color-sombra-texto-footer;
     color: $color-texto-footer;
@@ -118,4 +122,34 @@
     height: $height;
     width: $width;
     filter: grayscale(100%);
+}
+
+// Formato imágenes en contenedores con Flex
+@mixin img_container_flex_self {
+    display: inline-block;
+    align-items: center;
+    justify-self: center;
+    min-height: 300px;
+    height: $height;
+    width: $width;
+    border-radius: $border-radius;
+    @include neon-shadow($color-sombra-box-img, $color-sombra-box-img);
+}
+
+// Formato contenedores de testimonio con Flex
+@mixin container_tes_flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: $width;
+    height: $height;
+}
+
+// Formato animación
+@mixin animation($nombre) {
+    animation-name: $nombre;
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
+    animation-delay: 1s;
+    animation-direction: alternate-reverse;
 }

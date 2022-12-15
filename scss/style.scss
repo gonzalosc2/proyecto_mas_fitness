@@ -52,7 +52,7 @@ nav {
         .navbar-brand {
             img {
                 height: $size-logo;
-                filter: drop-shadow(0.5px .5px 20px #4d4d4d);
+                filter: drop-shadow(0.5px .5px 20px $color-sombra-logo);
             }
         }
     }
@@ -72,7 +72,8 @@ header {
         color: $color-t1;
 
         &:first-child {
-            text-shadow: 2px 2px 3px $color-sombra-t2;
+            @include sombra-texto(2px, 2px, 3px, $color-sombra-t2);
+            @include animation(texto-latido);
         }
 
         &:last-child {
@@ -100,12 +101,12 @@ main {
             }
 
             .texto {
-                margin-bottom: 0;
+                @extend %estilo-margin-bottom;
                 font-size: $size-font;
-                text-shadow: 2px 2px 2px $color-sombra-texto;
+                @include sombra-texto(2px, 2px, 2px, $color-sombra-texto);
 
                 p {
-                    margin-bottom: 0;
+                    @extend %estilo-margin-bottom;
                 }
             }
         }
@@ -114,7 +115,7 @@ main {
         .container_carousel {
             height: $height;
             width: $width;
-            max-width: 500px;
+            max-width: $max-width-carousel;
 
             .carousel-inner {
                 border-radius: $border-radius;
@@ -135,7 +136,7 @@ main {
 
             a {
                 img {
-                    width: 80vw;
+                    width: $width-img-logo;
                 }
             }
         }
@@ -179,7 +180,7 @@ main {
         @extend %estilos-flex-img-text;
 
         img {
-            max-width: 50%;
+            max-width: $max-width-img-mid-text-mobile;
             @include neon-shadow($color-sombra-box-img, $color-sombra-box-img);
 
         }
@@ -197,7 +198,7 @@ main {
         @extend %estilos-flex-img-text;
 
         img {
-            max-width: 100%;
+            max-width: $max-width-img-mid-text-online-mobile;
         }
 
         .img_mobi_no_show {
@@ -350,14 +351,7 @@ footer {
             }
 
             .container_img {
-                display: inline-block;
-                align-items: center;
-                justify-self: center;
-                min-height: 300px;
-                height: $height;
-                width: $width;
-                border-radius: $border-radius;
-                @include neon-shadow($color-sombra-box-img, $color-sombra-box-img);
+                @include img_container_flex_self;
 
                 img {
                     @include img_container_grid;
@@ -413,13 +407,8 @@ footer {
                 "t1       t2    "
                 "t3       t4    ";
 
-            // Estilo carrusel home
             .container {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                width: 100%;
-                height: 100%;
+                @include container_tes_flex;
 
                 .titulo_texto {
                     font-size: $size-t1*$size-increase-tablet;
@@ -466,23 +455,23 @@ footer {
         // Formato bloque de imágenes en medio de texto
         .img_mid_text {
             img {
-                max-width: 30%;
+                max-width: $max-width-img-mid-text-tablet;
             }
 
             .img_mobi_no_show {
                 display: inline;
-                max-width: 30%;
+                max-width: $max-width-img-mid-text-tablet;
             }
         }
 
         .img_mid_text_online {
             img {
-                max-width: 50%;
+                max-width: $max-width-img-mid-text-online-tablet;
             }
 
             .img_mobi_no_show {
                 display: inline;
-                max-width: 50%;
+                max-width: $max-width-img-mid-text-online-tablet;
             }
         }
 
@@ -498,8 +487,8 @@ footer {
     /* 3. ESTILOS DE FOOTER */
 
     footer {
-        justify-content: space-between;
-        font-size: 1.1rem;
+
+        font-size: $size-font-footer*1.375;
         font-weight: bolder;
 
         .no_show {
@@ -636,31 +625,31 @@ footer {
         // Formato bloque de imágenes en medio de texto
         .img_mid_text {
             img {
-                max-width: 25%;
+                max-width: $max-width-img-mid-text-desktop;
             }
 
             .img_mobi_no_show {
-                max-width: 25%;
+                max-width: $max-width-img-mid-text-desktop;
             }
 
             .img_mobi_no_show2 {
                 display: inline;
-                max-width: 25%;
+                max-width: $max-width-img-mid-text-desktop;
             }
         }
 
         .img_mid_text_online {
             img {
-                max-width: 33%;
+                max-width: $max-width-img-mid-text-online-desktop;
             }
 
             .img_mobi_no_show {
-                max-width: 33%;
+                max-width: $max-width-img-mid-text-online-desktop;
             }
 
             .img_mobi_no_show2 {
                 display: inline;
-                max-width: 33%;
+                max-width: $max-width-img-mid-text-online-desktop;
             }
         }
 

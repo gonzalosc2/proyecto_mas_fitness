@@ -15,6 +15,7 @@ $color-texto-volver-sec: white;
 $color-borde-box: yellowgreen;
 
 // colores sombras 
+$color-sombra-logo: #4d4d4d;
 $color-sombra-texto: #4a4949c6;
 $color-sombra-box-nav1: #ffea01;
 $color-sombra-box-nav2: #de2b2b;
@@ -35,6 +36,7 @@ $size-header: 3rem;
 $size-t1: 1.5rem;
 $size-t2: $size-t1*.9;
 $size-font: 1rem;
+$size-font-footer: .8rem;
 $size-increase-tablet: 1.1;
 $size-increase-desktop: 1.25;
 $border-radius: 25px;
@@ -43,3 +45,11 @@ $width: 100%;
 $grid-padd: .3rem;
 $grid-gap: 2.5rem;
 $gap-mobile: 2rem;
+$max-width-carousel: 500px;
+$width-img-logo: 80vw;
+$max-width-img-mid-text-mobile: 50%;
+$max-width-img-mid-text-tablet: 30%;
+$max-width-img-mid-text-desktop: 25%;
+$max-width-img-mid-text-online-mobile: 100%;
+$max-width-img-mid-text-online-tablet: 50%;
+$max-width-img-mid-text-online-desktop: 33%;

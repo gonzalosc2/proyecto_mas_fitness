@@ -6,6 +6,9 @@ main .test_container_main .container .texto, main .texto {
   main .test_container_main .container .texto p, main .texto p {
     margin-bottom: 1.2rem; }
 
+main .index_container_main .container .texto, main .index_container_main .container .texto p {
+  margin-bottom: 0; }
+
 main, main .index_container_main, main .test_container_main {
   display: flex;
   flex-direction: column;
@@ -94,7 +97,12 @@ header {
     font-family: dead-stock-font;
     color: #f4d32d; }
     header .texto_header:first-child {
-      text-shadow: 2px 2px 3px #fd4f4f; }
+      text-shadow: 2px 2px 3px #fd4f4f;
+      animation-name: texto-latido;
+      animation-iteration-count: infinite;
+      animation-duration: 3s;
+      animation-delay: 1s;
+      animation-direction: alternate-reverse; }
     header .texto_header:last-child {
       transform: rotateX(180deg) translateX(15%) translateY(35px) skewX(-40deg);
       opacity: .4;
@@ -104,11 +112,8 @@ header {
 /* ****************************************************** */
 /* 2. ESTILOS DE MAIN */
 main .index_container_main .container .texto {
-  margin-bottom: 0;
   font-size: 1rem;
   text-shadow: 2px 2px 2px #4a4949c6; }
-  main .index_container_main .container .texto p {
-    margin-bottom: 0; }
 
 main .index_container_main .container_carousel {
   height: 100%;
@@ -177,7 +182,7 @@ footer {
   margin-top: 1rem;
   padding: .5rem;
   text-align: center;
-  font-size: .8rem;
+  font-size: 0.8rem;
   font-weight: bold;
   text-shadow: 4px 4px 3px #ff02029c;
   color: #e90000; }
@@ -323,7 +328,6 @@ footer {
   /* ****************************************************** */
   /* 3. ESTILOS DE FOOTER */
   footer {
-    justify-content: space-between;
     font-size: 1.1rem;
     font-weight: bolder; }
     footer .no_show {
@@ -409,45 +413,15 @@ footer {
 /* ****************************************************** */
 /* 4. SCSS - ANIMACIONES */
 /* ANIMACIONES */
-/* estilos de section */
 /* ****************************************************** */
-/* VERSION MOBILE */
-@keyframes texto-gira {
+@keyframes texto-latido {
   0% {
-    transform: rotate(0deg); }
+    transform: scale(1); }
   25% {
-    transform: rotate(1.5deg) skew(15deg); }
+    transform: scale(0.97); }
   50% {
-    transform: rotate(0deg); }
+    transform: scale(1); }
   75% {
-    transform: rotate(-1.5deg) skew(-15deg); }
+    transform: scale(1.03); }
   100% {
-    transform: rotate(0deg); } }
-
-@keyframes texto-desliza {
-  0% {
-    transform: translateX(0); }
-  25% {
-    transform: translateX(50%); }
-  50% {
-    transform: translateX(0); }
-  75% {
-    transform: translateX(-50%); }
-  100% {
-    transform: translateX(0); } }
-
-/* ****************************************************** */
-/* VERSION DESKTOP */
-@media screen and (min-width: 1024px) {
-  @keyframes texto-latido {
-    from {
-      transform: scale(0.9); }
-    to {
-      transform: scale(1); } }
-  @keyframes texto-desliza {
-    0% {
-      transform: translateX(0); }
-    50% {
-      transform: translateX(20rem); }
-    100% {
-      transform: translateX(0); } } }
+    transform: scale(1); } }
